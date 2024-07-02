@@ -1,0 +1,3 @@
+D:/myProject/smallterm/cmake-build-debug/CMakeFiles/smallterm.dir
+D:/myProject/smallterm/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/myProject/smallterm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
