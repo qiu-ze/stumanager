@@ -16,4 +16,18 @@ struct Student {
 };
 typedef struct Student STU;
 
+void Exit();
+void append_Record();
+void list_Record();
+void delete_Record();
+void modify_Record();
+void search_Record();
+void sort_Score_In_Descending_Order_By_Sum();
+void sort_Score_In_Ascending_Order_By_Sum();
+void sort_Score_In_Descending_Order_By_Num();
+void sort_Score_In_Ascending_Order_By_Num();
+void write_To_File();
+void read_All_From_File();
+void read_One_From_File();
+
 #endif //STUDENT_H
