@@ -18,8 +18,8 @@ int main(void) {
     printf("|       7.Sort Score in ascending order by sum        |\n");
     printf("|       8.Sort Score in descending order by num       |\n");
     printf("|       9.Sort Score in ascending order by num        |\n");
-    printf("|      10.                                            |\n");
-    printf("|      11.                                            |\n");
+    printf("|      10.Write to a File                             |\n");
+    printf("|      11.Read from a File                            |\n");
     printf("|      12.                                            |\n");
     printf("|      13.Exit                                        |\n");
     printf("*******************************************************\n");
@@ -56,6 +56,12 @@ int main(void) {
             case 9:
                 sort_Score_In_Ascending_Order_By_Num();
                 break;
+            case 10:
+                write_To_File();
+            break;
+            case 11:
+            read_From_A_File();
+            break;
             case 13:
                 Exit();
                 break;
@@ -310,6 +316,25 @@ void write_To_File() {
 
     fclose(fp);
     printf("学生信息已成功保存到 student.dat 文件中。\n");
+}
+
+void read_From_A_File() {
+    printf("想要读取全部学生的数据请按1。\n");
+    printf("想要根据学号和姓名读取单个学生的数据请按2。\n");
+    int ll;
+    scanf("%d", &ll);
+    while (1) {
+        switch (ll) {
+            case 1:
+                read_All_From_File();
+                break;
+            case 2:
+                read_One_From_File();
+                break;
+            default:printf("请输入1或2\n");
+        }
+        break;
+    }
 }
 
 void read_All_From_File() {
