@@ -8,7 +8,7 @@ int studentCount = 0;
 int main(void) {
     SetConsoleOutputCP(65001);
     printf("*******************************************************\n");
-    printf("|              欢迎使用基于数组的学生信息管理系统            |\n");
+    printf("|              欢迎使用基于数组的学生信息管理系统        |\n");
     printf("|       1.Append record                               |\n");
     printf("|       2.List record                                 |\n");
     printf("|       3.Delete record                               |\n");
@@ -20,7 +20,7 @@ int main(void) {
     printf("|       9.Sort Score in ascending order by num        |\n");
     printf("|      10.Write to a File                             |\n");
     printf("|      11.Read from a File                            |\n");
-    printf("|      12.                                            |\n");
+    printf("|      12.Insert                                      |\n");
     printf("|      13.Exit                                        |\n");
     printf("*******************************************************\n");
     int aa;
@@ -58,10 +58,13 @@ int main(void) {
                 break;
             case 10:
                 write_To_File();
-            break;
+                break;
             case 11:
             read_From_A_File();
-            break;
+                break;
+            case 12:
+            Insert();
+                break;
             case 13:
                 Exit();
                 break;
@@ -395,4 +398,23 @@ void read_One_From_File(){
     }
 
     fclose(fp);
+}
+
+void Insert(){
+     if (studentCount == 0) {
+        printf("没有学生记录可以排序。\n");
+        return;
+    }
+
+    for(int i = 0;i < studentCount;i++){
+        for(int j = i-1;j >= 0 &&j < i; j--){
+            if (CalculateTotalScore(&students[j]) < CalculateTotalScore(&students[i])){
+                STU temp = students[j];
+                students[j] = students[i];
+                students[i] = temp;
+            }
+        }
+    }
+
+    printf("学生记录已按总分降序排序。\n");
 }

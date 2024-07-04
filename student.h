@@ -30,5 +30,6 @@ void write_To_File();
 void read_From_A_File();
 void read_All_From_File();
 void read_One_From_File();
+void Insert();
 
 #endif //STUDENT_H
