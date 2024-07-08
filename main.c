@@ -5,8 +5,7 @@
 STU students[N];
 int studentCount = 0;
 
-int main(void) {
-    SetConsoleOutputCP(65001);
+void print_Menu() {
     printf("*******************************************************\n");
     printf("|              欢迎使用基于数组的学生信息管理系统        |\n");
     printf("|       1.Append record                               |\n");
@@ -23,8 +22,13 @@ int main(void) {
     printf("|      12.Insert                                      |\n");
     printf("|      13.Exit                                        |\n");
     printf("*******************************************************\n");
+}
+
+int main(void) {
+    SetConsoleOutputCP(65001);
     int aa;
     while (1) {
+        print_Menu();
         printf("选择你要使用的功能\n");
         if(scanf("%d", &aa)!=1) {
             while (getchar()!='\n');
@@ -74,6 +78,8 @@ int main(void) {
                 break;
             default: printf("无此功能\n");
         }
+        system("pause");
+        system("cls");
     }
 }
 
@@ -329,8 +335,12 @@ void read_From_A_File() {
     printf("想要读取全部学生的数据请按1。\n");
     printf("想要根据学号和姓名读取单个学生的数据请按2。\n");
     int ll;
-    scanf("%d", &ll);
     while (1) {
+        if(scanf("%d", &ll)!=1) {
+            while (getchar()!='\n');
+            printf("无效的输入，请输入数字。\n");
+            continue;
+        }
         switch (ll) {
             case 1:
                 read_All_From_File();

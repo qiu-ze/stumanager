@@ -16,6 +16,7 @@ struct Student {
 };
 typedef struct Student STU;
 
+void print_Menu();
 void Exit();
 void append_Record();
 void list_Record();
