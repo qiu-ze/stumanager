@@ -26,7 +26,11 @@ int main(void) {
     int aa;
     while (1) {
         printf("选择你要使用的功能\n");
-        scanf("%d", &aa);
+        if(scanf("%d", &aa)!=1) {
+            while (getchar()!='\n');
+            printf("无效的输入，请输入数字。\n");
+            continue;
+        };
         switch (aa) {
             case 1:
                 printf("你选择的功能是Append record\n");
