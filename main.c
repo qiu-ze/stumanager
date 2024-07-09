@@ -41,39 +41,51 @@ int main(void) {
                 append_Record();
                 break;
             case 2:
+                printf("你选择的功能是List record\n");
                 list_Record();
                 break;
             case 3:
+                printf("你选择的功能是Delete record\n");
                 delete_Record();
                 break;
             case 4:
+                printf("你选择的功能是Modify record\n");
                 modify_Record();
                 break;
             case 5:
+                printf("你选择的功能是Search record\n");
                 search_Record();
                 break;
             case 6:
+                printf("你选择的功能是Sort score in descending order by sum\n");
                 sort_Score_In_Descending_Order_By_Sum();
                 break;
             case 7:
+                printf("你选择的功能是Sort score in ascending order by sum\n");
                 sort_Score_In_Ascending_Order_By_Sum();
                 break;
             case 8:
+                printf("你选择的功能是Sort score in descending order by num\n");
                 sort_Score_In_Descending_Order_By_Num();
                 break;
             case 9:
+                printf("你选择的功能是Sort score in ascending order by num\n");
                 sort_Score_In_Ascending_Order_By_Num();
                 break;
             case 10:
+                printf("你选择的功能是Write to file\n");
                 write_To_File();
                 break;
             case 11:
+                printf("你选择的功能是Read from a file\n");
             read_From_A_File();
                 break;
             case 12:
+                printf("你选择的功能是Insert\n");
             Insert();
                 break;
             case 13:
+                printf("Byebye\n");
                 Exit();
                 break;
             default: printf("无此功能\n");
