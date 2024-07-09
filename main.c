@@ -6,7 +6,7 @@ STU students[N];
 int studentCount = 0;
 
 void print_Menu() {
-    printf("*******************************************************\n");
+    printf("=======================================================\n");
     printf("|              欢迎使用基于数组的学生信息管理系统        |\n");
     printf("|       1.Append record                               |\n");
     printf("|       2.List record                                 |\n");
@@ -21,7 +21,7 @@ void print_Menu() {
     printf("|      11.Read from a File                            |\n");
     printf("|      12.Insert                                      |\n");
     printf("|      13.Exit                                        |\n");
-    printf("*******************************************************\n");
+    printf("=======================================================\n");
 }
 
 int main(void) {
@@ -34,6 +34,8 @@ int main(void) {
             while (getchar()!='\n');
             printf("无效的输入，请输入数字。\n");
             continue;
+            system("pause");
+            sysytem("cls");
         };
         switch (aa) {
             case 1:
@@ -256,17 +258,17 @@ void sort_Score_In_Ascending_Order_By_Sum(){
     }
 
     for (int i = 0; i < studentCount - 1; i++) {
-        int minIndex = i;
+        int min = i;
         for (int j = i + 1; j < studentCount; j++) {
-            if (CalculateTotalScore(&students[j]) < CalculateTotalScore(&students[minIndex])) {
-                minIndex = j;
+            if (CalculateTotalScore(&students[j]) < CalculateTotalScore(&students[min])) {
+                min = j;
             }
         }
 
-        if (minIndex != i) {
+        if (min != i) {
             STU temp = students[i];
             students[i] = students[minIndex];
-            students[minIndex] = temp;
+            students[min] = temp;
         }
     }
     printf("按照总分升序排序完成。\n");
@@ -321,7 +323,7 @@ void write_To_File() {
         return;
     }
 
-    fwrite(&studentCount, sizeof(int), 1, fp);
+    fwrite(&studentCount, sizeof(int), 1, fp);  
 
     for (int i = 0; i < studentCount; i++) {
         fwrite(&students[i], sizeof(STU), 1, fp);
